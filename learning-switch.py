@@ -47,7 +47,7 @@ class LearningSwitch(DynamicPolicy):
         # TODO - You will need to implement this based on how your forwarding
         # table are set up. Us the functions in the first half of helpers.
         # Format should be to call write_forwarding_entry() for each entry in
-        # the forwarding table, then finish up with finish_printing().          
+        # the forwarding table, then finish up with finish_printing().        
 
         
 
@@ -60,8 +60,7 @@ class LearningSwitch(DynamicPolicy):
 			write_forwarding_entry(switch, port, macaddr)
 		next_entry()
 
-	finish_log()
-        
+	finish_log()       
 
 
         pass
@@ -77,8 +76,7 @@ class LearningSwitch(DynamicPolicy):
         else: 
   		
                 fwd_tble[get_switch(pkt)] = {}
-		fwd_tble[get_switch(pkt)][str(get_src_mac(pkt))] = get_inport(pkt)
-		
+		fwd_tble[get_switch(pkt)][str(get_src_mac(pkt))] = get_inport(pkt)		
         
 
         # print out the switch tables:
@@ -87,8 +85,6 @@ class LearningSwitch(DynamicPolicy):
         # Call build_policy to update the fowarding tables of the switches.
         self.build_policy()
         pass
-
-
 
 
     def build_policy(self):
@@ -118,8 +114,7 @@ class LearningSwitch(DynamicPolicy):
 		    if not_flood_pkts == None:
 		        not_flood_pkts = (match(switch=int(switch), dstmac=(macaddr)))
 		    else:
-		        not_flood_pkts |= (match(switch=int(switch), dstmac=(macaddr)))
-		                
+		        not_flood_pkts |= (match(switch=int(switch), dstmac=(macaddr)))		                
 		        
 
         # If you follow the pattern above, you won't have to change this below. 
@@ -132,7 +127,6 @@ class LearningSwitch(DynamicPolicy):
         # The following line can be uncommented to see your policy being
         # built up, say during a flood period. 
         # print self.policy
-
 
 def main():
     return LearningSwitch()
