@@ -13,10 +13,8 @@ def gcd(w, m):
         w, m = m, w % m
     return w
 
-
 # Function to compute the prime factors of n
-# prime factorization brute-force algorithm
-
+# Prime factorization brute-force algorithm
 #TODO -- n1 and n2 share p or q?
 # Compute prime factors of n1 
 def is_waldo(n1, n2):
@@ -68,12 +66,8 @@ def is_waldo(n1, n2):
     else:
         result = False
     
-        return factors_n1, factors_n2          
-         
-           
-     
-    #your code ends here
-
+        return factors_n1, factors_n2     
+                
     return result
 
 #TODO -- get private key of n1
@@ -85,7 +79,7 @@ def get_private_key(n1, n2, e):
     n1 = n1**0.5
     n2 = n2**0.5    
 
-    #your code starts here
+    
     # Function to compute the prime factors of n1
     # prime factorization brute-force algorithm
    
@@ -192,7 +186,6 @@ def main():
     
     print "your private key: ", hex(d).rstrip("L")
     print "your waldo: ", waldo
-
 
 if __name__ == "__main__":
     main()
